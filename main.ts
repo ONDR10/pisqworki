@@ -44,7 +44,7 @@ basic.forever(function () {
     for (i = 0; i < 5; i++) {
         for (y = 0; y < 5; y++) {
             if ((i == 0 || i == 4) || (y == 0 || y == 4)) {
-                led.plotBrightness(i, y, 10);
+                led.plotBrightness(i, y, 5);
             }
         }
     }
