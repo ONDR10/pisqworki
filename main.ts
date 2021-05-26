@@ -1,7 +1,8 @@
-let i = 0
-let y = 0
-let pozicion = 0
-let level = 1
+let i = 0;
+let y = 0;
+let j = 0;
+let pozicion = 0;
+let level = 1;
 let tah = 0;
 function incraselevel(myint = 0)
 {
@@ -23,6 +24,28 @@ function decraselevel(myint = 0)
     }
     return myint;
 }
+
+function vyhodnotenie(myarr = [][0, 0, 0])
+{
+    let row = 0;
+    let i = 0, y = 0;
+    let column = 0;
+    let diagonal = 0;
+    for (j = 1; j < 3; j++) {
+        for (i = 0; i < 3; i++) {
+            for (y = 0; y < 3; y++) {
+                if (myarr[i][y] == j) {
+                    row++;
+                    if (row == 3) {
+                        return 1;
+                    } 
+                }
+            }
+        }
+    }
+}
+
+//*********************PROGRAM**************************//
 basic.forever(function () {
     basic.showString("Vyber si obtiaznost (1-3): ")
     while (1) {
@@ -49,6 +72,7 @@ basic.forever(function () {
         }
     }
     let myarr = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+    let vyhra = 0;
     pause(10000);
     let pocet_tahov = 0;
     while (1) {
@@ -73,8 +97,9 @@ basic.forever(function () {
             tah = 0;
         }
         // vyhodnotenie
-        if (1) {
-
+        vyhra = vyhodnotenie(myarr);
+        if (vyhra == 1) {
+            break;
         }
         if (pocet_tahov == 9) {
             basic.showString("Draw!");
