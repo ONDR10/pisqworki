@@ -48,6 +48,7 @@ basic.forever(function () {
             }
         }
     }
+    let myarr = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
     pause(10000);
     let pocet_tahov = 0;
     while (1) {
